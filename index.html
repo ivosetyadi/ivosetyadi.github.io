@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ivo Setyadi — DevGuard Tools</title>
+<meta name="description" content="Open-source GitHub Actions &amp; Apps that catch risky deploys, leaked secrets, and bad migrations before they hit production.">
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --border:#30363d; --fg:#e6edf3;
+    --muted:#8b949e; --accent:#2f81f7; --green:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header{padding:72px 0 40px;border-bottom:1px solid var(--border)}
+  .brand{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  h1{font-size:38px;line-height:1.15;margin:0 0 16px;font-weight:700}
+  .lede{font-size:19px;color:var(--muted);max-width:640px;margin:0}
+  .moat{margin-top:24px;padding:16px 18px;background:var(--panel);
+    border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;
+    font-size:15px;color:var(--fg)}
+  section{padding:48px 0}
+  h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 20px}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+    padding:20px;display:flex;flex-direction:column;gap:10px}
+  .card h3{margin:0;font-size:18px;display:flex;align-items:center;gap:8px}
+  .card p{margin:0;color:var(--muted);font-size:14px;flex:1}
+  .badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;
+    text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+  .b-live{background:rgba(63,185,80,.15);color:var(--green);border:1px solid rgba(63,185,80,.4)}
+  .b-soon{background:rgba(210,153,34,.12);color:var(--amber);border:1px solid rgba(210,153,34,.35)}
+  .b-plan{background:rgba(139,148,158,.12);color:var(--muted);border:1px solid var(--border)}
+  .links{display:flex;gap:14px;font-size:13px;margin-top:4px}
+  .links span{color:var(--border)}
+  footer{border-top:1px solid var(--border);padding:32px 0 56px;color:var(--muted);font-size:14px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <p class="brand">DevGuard Tools</p>
+    <h1>Ship to production without the 2&nbsp;a.m. incident.</h1>
+    <p class="lede">Open-source GitHub Actions and Apps that catch risky migrations, cascading restarts, and leaked secrets <em>before</em> they merge.</p>
+    <div class="moat">
+      Built from real production postmortems — a Flyway migration that locked 6M rows, a <code>docker restart</code> that took a service down for an hour, a <code>.git/</code> folder leaked to a public host. These tools encode the lessons so you don't learn them the hard way.
+    </div>
+  </div>
+</header>
+
+<section class="wrap">
+  <h2>Products</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Deploy Guard <span class="badge b-soon">In&nbsp;progress</span></h3>
+      <p>Blocks a PR when it carries dangerous deploy patterns: mass-DML migrations, unguarded <code>docker restart</code>, missing backup steps.</p>
+      <div class="links"><a href="https://github.com/ivosetyadi/deploy-guard">Repo</a><span>·</span><a href="#">Marketplace</a></div>
+    </div>
+
+    <div class="card">
+      <h3>PR Risk Radar <span class="badge b-plan">Planned</span></h3>
+      <p>A bot that comments a risk score on every PR — new CVEs, lockfile drift, edits to critical files, risky SQL.</p>
+      <div class="links"><a href="#">Repo</a></div>
+    </div>
+
+    <div class="card">
+      <h3>Changelog AI <span class="badge b-plan">Planned</span></h3>
+      <p>Auto-generates human-readable release notes from commits &amp; PRs, grouped by feature and bugfix.</p>
+      <div class="links"><a href="#">Repo</a></div>
+    </div>
+
+    <div class="card">
+      <h3>Gitleak Scanner <span class="badge b-plan">Planned</span></h3>
+      <p>Catches hardcoded API keys, committed <code>.env</code> files, and <code>.git/</code> folders staged for deploy.</p>
+      <div class="links"><a href="#">Repo</a></div>
+    </div>
+
+    <div class="card">
+      <h3>Heatmap+ <span class="badge b-plan">Planned</span></h3>
+      <p>A richer contribution SVG for your profile README — streaks, languages, productive hours.</p>
+      <div class="links"><a href="#">Repo</a></div>
+    </div>
+
+    <div class="card">
+      <h3>Issue Triage Bot <span class="badge b-plan">Icebox</span></h3>
+      <p>Auto-labels, assigns, and detects duplicate issues using embeddings.</p>
+      <div class="links"><a href="#">Repo</a></div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Made by <a href="https://github.com/ivosetyadi">Ivo Setyadi</a> ·
+    <a href="https://ivo.setyadi.com">ivo.setyadi.com</a> ·
+    MIT licensed
+  </div>
+</footer>
+</body>
+</html>
